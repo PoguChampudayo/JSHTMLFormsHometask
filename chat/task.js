@@ -16,13 +16,13 @@ rudeAnswerOptions = [
 function rudeAnswer (messages, date) {
     messages.innerHTML += `<div class="message">
     <div class="message__time">${date.getHours()}:${date.getMinutes()}</div>
-    <div class="message__text">${rudeAnswerOptions[Math.round((Math.random()*9))]}</div>                
+    <div class="message__text">${rudeAnswerOptions[Math.round((Math.random()*8))]}</div>                
     </div>`;
 }
 
 input = document.querySelector('input')
 input.addEventListener('keydown', (event) => {
-    if (event.key == 'Enter' && input.value) {
+    if (event.key == 'Enter' && input.value.trim()) {
         const messages = document.querySelector( '.chat-widget__messages' );
         let now = new Date()
         messages.innerHTML += `<div class="message message_client">
